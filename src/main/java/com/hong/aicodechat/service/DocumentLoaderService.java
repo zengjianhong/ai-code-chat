@@ -1,4 +1,4 @@
-package com.hong.aicodehelper.service;
+package com.hong.aicodechat.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.document.Document;

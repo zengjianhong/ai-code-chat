@@ -1,6 +1,6 @@
-package com.hong.aicodehelper.config;
+package com.hong.aicodechat.config;
 
-import com.hong.aicodehelper.service.DocumentLoaderService;
+import com.hong.aicodechat.service.DocumentLoaderService;
 import io.modelcontextprotocol.client.McpSyncClient;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.chat.client.ChatClient;

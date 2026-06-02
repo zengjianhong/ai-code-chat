@@ -1,4 +1,4 @@
-package com.hong.aicodehelper.controller;
+package com.hong.aicodechat.controller;
 
 import lombok.Builder;
 import lombok.Data;

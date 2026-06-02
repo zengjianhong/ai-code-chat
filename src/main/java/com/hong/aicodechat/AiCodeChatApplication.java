@@ -1,13 +1,13 @@
-package com.hong.aicodehelper;
+package com.hong.aicodechat;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AiCodeHelperApplication {
+public class AiCodeChatApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(AiCodeHelperApplication.class, args);
+        SpringApplication.run(AiCodeChatApplication.class, args);
     }
 
 }

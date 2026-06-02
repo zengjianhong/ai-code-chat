@@ -1,4 +1,4 @@
-# AI Code Helper
+# AI Code Chat
 
 基于 Spring AI 2.0 + RAG 技术的智能问答系统，能够基于本地文档知识库回答用户问题，支持多轮对话记忆和 MCP 工具调用。
 
@@ -128,8 +128,8 @@ spring:
 ## 项目结构
 
 ```
-src/main/java/com/hong/aicodehelper/
-├── AiCodeHelperApplication.java    # 启动类
+src/main/java/com/hong/aicodechat/
+├── AiCodeChatApplication.java    # 启动类
 ├── config/
 │   └── AIConfig.java               # VectorStore、ChatClient、ChatMemory、MCP Bean 配置
 ├── controller/
