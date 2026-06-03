@@ -46,10 +46,19 @@
 <script setup>
 import { ref } from 'vue'
 import { Marked } from 'marked'
-const marked = new Marked()
+const marked = new Marked({ breaks: true, gfm: true })
 defineProps({ message: Object })
 const showThinking = ref(false)
-function renderMarkdown(text) { return marked.parse(text) }
+function renderMarkdown(text) {
+  let processed = text
+    // Ensure headings have a blank line before them
+    .replace(/([^\n])\n(#{1,6}\s)/g, '$1\n\n$2')
+    // Ensure list items preceded by non-list text have a blank line before the list
+    .replace(/([^\n*\-])\n([*\-]\s)/g, '$1\n\n$2')
+    // Fix bold text followed by colon on same line as list
+    .replace(/(\*\*[^*]+\*\*[：:])\s*\n([*\-])/g, '$1\n\n$2')
+  return marked.parse(processed)
+}
 </script>
 
 <style scoped>
