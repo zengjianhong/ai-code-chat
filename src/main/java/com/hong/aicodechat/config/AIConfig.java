@@ -92,7 +92,8 @@ public class AIConfig {
                         MessageChatMemoryAdvisor.builder(chatMemory).build(),
                         QuestionAnswerAdvisor.builder(vectorStore).build(),
                         new SimpleLoggerAdvisor()
-                ).defaultTools(toolCallbackProvider.getToolCallbacks())
+                )
+                .defaultToolCallbacks(toolCallbackProvider.getToolCallbacks())
                 .defaultSystem("""
                         You are a helpful assistant that answers questions based on the provided documents.
                         If the answer cannot be found in the documents, say so honestly.
