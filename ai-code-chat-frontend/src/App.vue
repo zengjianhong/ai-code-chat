@@ -20,10 +20,20 @@
           <div class="quick-card" v-for="card in quickCards" :key="card.title" @click="handleQuickCard(card.prompt)">
             <div class="card-icon-wrap">
               <svg class="card-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22">
-                <path v-if="card.key === 'java'" d="M4 6h16M4 12h16M4 18h12"/>
-                <circle v-else-if="card.key === 'thread'" cx="12" cy="12" r="10"/><path v-else-if="card.key === 'thread'" d="M12 6v6l4 2"/>
-                <path v-else-if="card.key === 'algo'" d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path v-else-if="card.key === 'algo'" d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
-                <path v-else d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path v-else d="M14 2v6h6M12 18v-6"/><path v-else d="M9 15h6"/>
+                <template v-if="card.key === 'java'">
+                  <path d="M4 6h16M4 12h16M4 18h12"/>
+                </template>
+                <template v-else-if="card.key === 'thread'">
+                  <circle cx="12" cy="12" r="9"/>
+                  <path d="M12 6v6l3.5 2"/>
+                </template>
+                <template v-else-if="card.key === 'algo'">
+                  <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2M9 5v2h6V5M9 14l2 2 4-4"/>
+                </template>
+                <template v-else>
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
+                  <path d="M14 2v6h6M10 13V9m-2 4h4"/>
+                </template>
               </svg>
             </div>
             <div class="card-text">
